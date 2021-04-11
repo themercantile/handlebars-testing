@@ -1,4 +1,3 @@
-
 // Trying my own variables
 const engField = {
   "whose assignee": { "Assignee": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
@@ -24,16 +23,15 @@ var engFieldObj = {
 };
 var englishFieldComp = Handlebars.compile(englishField);
 
-
+$(document.body).append(englishFieldComp(engFieldObj));
 
 function loadOperator() {
   console.log("Load operator initiated");
-  var mySelection = document.getElementById("mySelect").value;
-  var myOperator = Object.values(engField.mySelection);
-  document.getElementById("tester").innerHTML = "You selected " + myOperator;
-  
+  var mySelection = document.getElementById("myOption").value;
+  var myOperator = Object.values(engField[mySelection]);
+  document.getElementById("tester").innerHTML = "You selected " + myOperator;  
 }
-$(document.body).append(englishFieldComp(engFieldObj));
+
 /*
 Using this later.
 var engOperator = {

@@ -10,25 +10,21 @@
   
 </head>
 
-<body>
-  
-
+<body>  
+  <script async src="./hbars.js" type="text/javascript"></script>
   <script id="englishTextField" type="text/x-handlebars-template">
     <div>
-      <select id="mySelect" onselect = "loadOperator()">
+      <select id="mySelect" onclick = "loadOperator()">
         {{#each engFieldKeys}}
-          <option value = "{{this}}">{{this}}</option>
+          <option value = "{{this}}" id = "myOption">{{this}}</option>
         {{/each}}
         </option>        
       </select>
     </div>
   </script>
-
   <p id="tester"></p>
-
   <!-- The following dependencies need to be loaded last.-->
-  <script async src="./hbars.js" type="text/javascript"></script>
-
+  <!-- <script async src="./hbars.js" type="text/javascript"></script> -->
 </body>
 
 </html>
