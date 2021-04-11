@@ -27,7 +27,7 @@ $(document.body).append(englishFieldComp(engFieldObj));
 
 function loadOperator() {
   console.log("Load operator initiated");
-  var mySelection = document.getElementById("myOption").value;
+  var mySelection = document.getElementById("mySelect").value;
   var myOperator = Object.values(engField[mySelection]);
   document.getElementById("tester").innerHTML = "You selected " + myOperator;  
 }
