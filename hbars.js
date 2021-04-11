@@ -23,13 +23,24 @@ var engFieldObj = {
 };
 var englishFieldComp = Handlebars.compile(englishField);
 
-$(document.body).append(englishFieldComp(engFieldObj));
+$("#field").append(englishFieldComp(engFieldObj));
 
 function loadOperator() {
   console.log("Load operator initiated");
   var mySelection = document.getElementById("mySelect").value;
   var myOperator = Object.values(engField[mySelection]);
-  document.getElementById("tester").innerHTML = "You selected " + myOperator;  
+  //document.getElementById("tester").innerHTML = "You selected " + myOperator;  
+  //console.log("You selected ", myOperator);
+  populateOperator(myOperator[0]);
+}
+
+function populateOperator(myOps=[]) {
+  var englishOps = $("#englishOpsField").html();
+  var engOpsObj = {
+    engOpsKeys: myOps
+  };
+  var englishOpsComp = Handlebars.compile(englishOps);
+  $("#operator").append(englishOpsComp(engOpsObj));
 }
 
 /*

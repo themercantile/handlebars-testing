@@ -12,6 +12,7 @@
 
 <body>  
   <script async src="./hbars.js" type="text/javascript"></script>
+
   <script id="englishTextField" type="text/x-handlebars-template">
     <div>
       <select id="mySelect" onchange = "loadOperator()">
@@ -22,7 +23,21 @@
       </select>
     </div>
   </script>
-  <p id="tester"></p>
+
+  <script id="englishOpsField" type="text/x-handlebars-template">
+    <div>
+      <select id="mySelect2">
+        {{#each engOpsKeys}}
+          <option value = "{{this}}">{{this}}</option>
+        {{/each}}
+        </option>        
+      </select>
+    </div>
+  </script>
+
+  <div id="field"></div>
+  <div id="operator"></div>
+  <div id="tester"></div>
   <!-- The following dependencies need to be loaded last.-->
   <!-- <script async src="./hbars.js" type="text/javascript"></script> -->
 </body>
