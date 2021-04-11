@@ -1,15 +1,5 @@
-//Retrieve the template data from the HTML.
-
-// Testing a select object with the ID "select-test"
-var myTest = $("#select-test").html(); //
-var testObject = {
-  listOfNames: ["Eggs", "Ham", "Spam", "Foo", "Bar"]
-};
-var myTestCompiled = Handlebars.compile(myTest);
-$(document.body).append(myTestCompiled(testObject));
 
 // Trying my own variables
-var englishField = $("#englishTextField").html();
 const engField = {
   "whose assignee": { "Assignee": ["=", "!=", "IS", "IS NOT", "IN", "NOT IN"] },
   "whose attachment list": { "Attachments": ["IS", "IS NOT"] },
@@ -34,10 +24,18 @@ var engFieldObj = {
 };
 var englishFieldComp = Handlebars.compile(englishField);
 
+
+
+function loadOperator() {
+  console.log("Load operator initiated");
+  var mySelection = document.getElementById("mySelect").value;
+  var myOperator = Object.values(engField.mySelection);
+  document.getElementById("tester").innerHTML = "You selected " + myOperator;
+  
+}
 $(document.body).append(englishFieldComp(engFieldObj));
-
-
 /*
+Using this later.
 var engOperator = {
   "IS": "is",
   "IS NOT": "is not",
