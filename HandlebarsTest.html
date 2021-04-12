@@ -13,6 +13,7 @@
 <body>  
   <script async src="./hbars.js" type="text/javascript"></script>
 
+  <div>I would like to find tickets: </div>
   <script id="englishTextField" type="text/x-handlebars-template">
     <div>
       <select id="mySelect" onchange = "loadOperator()">
@@ -37,7 +38,9 @@
 
   <div id="field"></div>
   <div id="operator"></div>
-  <div id="tester"></div>
+  <div id="userInput"><input type="text" id="userData" required></div>
+  <div id="copyButton"><input type="button" id="inputButton" value="Copy to Clipboard" onclick="copyToClip()"></div>
+
   <!-- The following dependencies need to be loaded last.-->
   <!-- <script async src="./hbars.js" type="text/javascript"></script> -->
 </body>
